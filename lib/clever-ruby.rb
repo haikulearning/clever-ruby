@@ -120,6 +120,8 @@ module Clever
     end
 
     rbody = response.body
+    p rbody
+    File.open("/tmp/haiku.json", "w") { |json| json << rbody }
     rcode = response.code
     begin
       # Would use :symbolize_names => true, but apparently there is
